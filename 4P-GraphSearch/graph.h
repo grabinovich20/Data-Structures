@@ -1,0 +1,29 @@
+/*
+ * graph.h
+ *
+ * Declaration of the graph class.
+ * 
+ * Author: <your name here>
+ */
+
+#ifndef _GRAPH_BFS_H
+#define _GRAPH_BFS_H
+
+#include <vector>
+
+using namespace std;
+
+class graph {
+public:
+    graph(int vertex_count);
+    ~graph();
+    void add_edge(int from, int to);
+    vector<int> find_shortest_path(int from, int to);
+    vector<vector<int>>* getStorage() const;
+
+private:
+    vector<vector<int>>* graphStorage;
+    vector<bool>* visited;
+};
+
+#endif
